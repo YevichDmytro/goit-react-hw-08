@@ -1,7 +1,15 @@
-import React from 'react';
+import ContactsForm from '../components/ContactForm/ContactForm';
+import ContactsList from '../components/ContactList/ContactList';
+import SearchBox from '../components/SearchBox/SearchBox';
 
 const ContactsPage = () => {
-  return <div>ContactsPage</div>;
+  return (
+    <div>
+      <ContactsForm />
+      <SearchBox />
+      <ContactsList />
+    </div>
+  );
 };
 
 export default ContactsPage;

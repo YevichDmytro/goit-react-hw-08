@@ -20,23 +20,26 @@ const ContactForm = () => {
     actions.resetForm();
   };
 
-  const FeedbackSchema = Yup.object().shape({
+  const validationSchema = Yup.object().shape({
     name: Yup.string()
-      .min(2, 'Too Short!')
-      .max(50, 'Too Long!')
-      .required('Required'),
-    number: Yup.string()
-      .min(3, 'Too Short!')
-      .max(50, 'Too Long!')
-      .required('Required'),
+      .required('Required!')
+      .min(3, 'Too short!')
+      .max(50, 'Name must be at most 50 characters!')
+      .test(
+        'trim',
+        'Name cannot be only spaces!',
+        value => value.trim() !== ''
+      ),
+    number: Yup.string().required('Required!'),
   });
+
   const id = nanoid();
 
   return (
     <Formik
       initialValues={{ name: '', number: '' }}
       onSubmit={handleSubmit}
-      validationSchema={FeedbackSchema}
+      validationSchema={validationSchema}
     >
       <Form className={style.form}>
         <div className={style.wrap}>
