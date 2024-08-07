@@ -5,7 +5,6 @@ import style from './LoginForm.module.css';
 import { logIn } from '../../redux/auth/operations';
 import * as Yup from 'yup';
 
-
 const LoginForm = () => {
   const emailFieldId = useId();
   const passwordFieldId = useId();
@@ -40,47 +39,51 @@ const LoginForm = () => {
   };
 
   return (
-    <div className={style.wrap}>
-      <h2>Форма логіну</h2>
-      <Formik
-        initialValues={{ email: '', password: '' }}
-        onSubmit={handleSubmit}
-        validationSchema={loginValidationSchema}
-      >
-        <Form className={style.authForm}>
-          <div>
-            <label htmlFor={emailFieldId}>email</label>
-            <Field
-              type='email'
-              name='email'
-              id={emailFieldId}
-              autoComplete='true'
-            />
-            <ErrorMessage
-              name='email'
-              component='span'
-              className={style.errorText}
-            />
-          </div>
+    <div>
+      <div className={style.wrapForm}>
+        <Formik
+          initialValues={{ email: '', password: '' }}
+          onSubmit={handleSubmit}
+          validationSchema={loginValidationSchema}
+        >
+          <Form className={style.authForm}>
+            <h2>Sign In</h2>
+            <div className={style.wrapField}>
+              <Field
+                type='email'
+                name='email'
+                id={emailFieldId}
+                autoComplete='true'
+                placeholder='Email'
+              />
+              <ErrorMessage
+                name='email'
+                component='span'
+                className={style.errorText}
+              />
+            </div>
 
-          <div>
-            <label htmlFor={passwordFieldId}>password</label>
-            <Field
-              type='password'
-              name='password'
-              id={passwordFieldId}
-              autoComplete='true'
-            />
-            <ErrorMessage
-              name='password'
-              component='span'
-              className={style.errorText}
-            />
-          </div>
+            <div className={style.wrapField}>
+              <Field
+                type='password'
+                name='password'
+                id={passwordFieldId}
+                autoComplete='true'
+                placeholder='Password'
+              />
+              <ErrorMessage
+                name='password'
+                component='span'
+                className={style.errorText}
+              />
+            </div>
 
-          <button type='submit'>Submit</button>
-        </Form>
-      </Formik>
+            <button type='submit' className={style.submitBtn}>
+              Submit
+            </button>
+          </Form>
+        </Formik>
+      </div>
     </div>
   );
 };

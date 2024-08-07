@@ -1,0 +1,9 @@
+.wrap {
+  display: flex;
+  color: #fff;
+  gap: 20px;
+}
+.welcomeText {
+}
+.logOutBtn {
+}

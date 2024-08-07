@@ -1,6 +1,9 @@
 body {
   font-family: sans-serif;
   line-height: 1.5;
+  width: 100%;
+  /* background: #22313f; */
+  background-color: lightblue;
 }
 
 h1,

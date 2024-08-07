@@ -1,18 +1,85 @@
-.authForm {
+.wrapForm {
   display: flex;
-  flex-direction: column;
-  gap: 8px;
-  max-width: 300px;
+  justify-content: center;
 }
 
-.wrap {
+.authForm {
+  --input-focus: #e74c3c;
+  --font-color: #fff;
+  --font-color-sub: #ccc;
+  --bg-color: #2c3e50;
+  --main-color: #e74c3c;
+  padding: 20px;
+  background: #34495e;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px;
+  justify-content: start;
+  gap: 20px;
+  border-radius: 10px;
+  width: fit-content;
+  height: auto;
+  min-height: 400px;
+  border: 2px solid var(--main-color);
+  box-shadow: 4px 4px var(--main-color);
+}
+
+.authForm > h2 {
+  color: var(--font-color);
+}
+
+.wrapField {
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapField > input[type='text'],
+.wrapField > input[type='email'],
+.wrapField > input[type='password'] {
+  width: 300px;
+  height: 45px;
+  border-radius: 10px;
+  border: 2px solid var(--main-color);
+  background-color: var(--bg-color);
+  box-shadow: 4px 4px var(--main-color);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--font-color);
+  padding: 5px 10px;
+  outline: none;
+
+  ::placeholder {
+    color: var(--font-color-sub);
+    opacity: 0.8;
+  }
+
+  :focus {
+    border: 2px solid var(--input-focus);
+  }
+}
+
+.submitBtn {
+  margin: 40px auto 0 auto;
+  width: 140px;
+  height: 45px;
+  border-radius: 10px;
+  border: 2px solid var(--main-color);
+  background-color: var(--bg-color);
+  box-shadow: 4px 4px var(--main-color);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--font-color);
+  cursor: pointer;
+}
+
+.submitBtn:active {
+  box-shadow: 0px 0px var(--main-color);
+  transform: translate(3px, 3px);
 }
 
 .errorText {
-  color: red;
-  text-transform: uppercase;
+  color: var(--font-color);
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 600;
 }

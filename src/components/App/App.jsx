@@ -1,15 +1,13 @@
 import { useEffect, lazy } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Route, Routes } from 'react-router-dom';
+import Layout from '../Layout/Layout';
 import {
   selectContactsError,
   selectContactsLoading,
 } from '../../redux/contacts/selectors';
-import { fetchAll } from '../../redux/contacts/operations';
-// import ContactForm from '../ContactForm/ContactForm';
-// import ContactList from '../ContactList/ContactList';
-// import SearchBox from '../SearchBox/SearchBox';
-import Layout from '../Layout/Layout';
-import { Route, Routes } from 'react-router-dom';
+import { selectIsRefreshing } from '../../redux/auth/selectors';
+import { refreshCurrentUser } from '../../redux/auth/operations';
 import style from './App.module.css';
 
 const HomePage = lazy(() => import('../../pages/HomePage'));
@@ -21,24 +19,18 @@ const NotFoundPage = lazy(() => import('../../pages/NotFoundPage'));
 const App = () => {
   const dispatch = useDispatch();
 
+  const isRefreshing = useSelector(selectIsRefreshing);
+  // const isRefreshing = true;
   const loading = useSelector(selectContactsLoading);
   const error = useSelector(selectContactsError);
 
-  // useEffect(() => {
-  //   dispatch(fetchAll());
-  // }, [dispatch]);
+  useEffect(() => {
+    dispatch(refreshCurrentUser());
+  }, [dispatch]);
 
-  return (
-    // <div className={style.wrap}>
-    //   <h1>Phonebook</h1>
-    //   <ContactForm />
-    //   <SearchBox />
-    //   {loading && !error && (
-    //     <b className={style.requestText}>Request in progress...</b>
-    //   )}
-    //   <ContactList />
-    // </div>
-
+  return isRefreshing ? (
+    <div>Refreshing user please wait...</div>
+  ) : (
     <div className={style.wrap}>
       <Layout>
         <Routes>
@@ -54,3 +46,13 @@ const App = () => {
 };
 
 export default App;
+
+// <div className={style.wrap}>
+//   <h1>Phonebook</h1>
+//   <ContactForm />
+//   <SearchBox />
+//   {loading && !error && (
+//     <b className={style.requestText}>Request in progress...</b>
+//   )}
+//   <ContactList />
+// </div>
