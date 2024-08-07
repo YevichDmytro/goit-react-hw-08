@@ -34,7 +34,6 @@ const LoginForm = () => {
         console.log('login error');
       });
 
-    console.log('login:', userCredits);
     actions.resetForm();
   };
 
