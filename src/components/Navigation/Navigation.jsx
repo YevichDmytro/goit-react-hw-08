@@ -8,8 +8,14 @@ const Navigation = () => {
 
   return (
     <nav className={style.nav}>
-      <NavLink to='/'>Home</NavLink>
-      {isLoggedIn && <NavLink to='/contacts'>Contacts</NavLink>}
+      <NavLink to='/' className={style.navBtn}>
+        Home
+      </NavLink>
+      {isLoggedIn && (
+        <NavLink to='/contacts' className={style.navBtn}>
+          Contacts
+        </NavLink>
+      )}
     </nav>
   );
 };

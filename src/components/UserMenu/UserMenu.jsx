@@ -9,7 +9,7 @@ const UserMenu = () => {
 
   return (
     <div className={style.wrap}>
-      <p className={style.welcomeText}>Welcome, {user.name}!</p>
+      <p className={style.welcomeText}>Welcome, <span>{user.name}</span> !</p>
       <button
         className={style.logOutBtn}
         type='button'

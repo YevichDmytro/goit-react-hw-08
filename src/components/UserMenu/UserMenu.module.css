@@ -3,7 +3,35 @@
   color: #fff;
   gap: 20px;
 }
+
 .welcomeText {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--font-color);
+  align-self: center;
 }
+
+.welcomeText > span {
+  color: var(--main-color);
+}
+
 .logOutBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 45px;
+  border-radius: 10px;
+  border: 2px solid var(--main-color);
+  background-color: var(--bg-color);
+  box-shadow: 4px 4px var(--main-color);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--font-color);
+  text-decoration: none;
+}
+
+.logOutBtn:active {
+  box-shadow: 0px 0px var(--main-color);
+  transform: translate(3px, 3px);
 }

@@ -17,7 +17,7 @@ const SearchBox = () => {
       <input
         className={style.field}
         type='input'
-        name='filter'
+        name='name-filter'
         id={`filter-${id}`}
         autoComplete='on'
         value={filter}

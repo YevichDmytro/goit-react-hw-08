@@ -1,22 +1,71 @@
 .form {
-  width: 300px;
-  border: 1px solid black;
-  padding: 25px;
-  border-radius: 4px;
-  margin: 0 auto 20px;
-}
-
-.wrap {
+  padding: 20px;
+  background: #34495e;
   display: flex;
   flex-direction: column;
-  margin-bottom: 16px;
+  align-items: center;
+  justify-content: start;
+  gap: 20px;
+  border-radius: 10px;
+  width: fit-content;
+  height: auto;
+  border: 2px solid var(--main-color);
+  box-shadow: 4px 4px var(--main-color);
 }
 
-.wrap label {
-  text-align: start;
+.submitBtn {
+  margin: 10px auto 0 auto;
+  width: 140px;
+  height: 45px;
+  border-radius: 10px;
+  border: 2px solid var(--main-color);
+  background-color: var(--bg-color);
+  box-shadow: 4px 4px var(--main-color);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--font-color);
+  cursor: pointer;
+}
+
+.submitBtn:active {
+  box-shadow: 0px 0px var(--main-color);
+  transform: translate(3px, 3px);
+}
+
+.wrapField {
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapField > input[type='text'] {
+  width: 300px;
+  height: 45px;
+  border-radius: 10px;
+  border: 2px solid var(--main-color);
+  background-color: var(--bg-color);
+  box-shadow: 4px 4px var(--main-color);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--font-color);
+  padding: 5px 10px 5px 15px;
+  outline: none;
+
+  ::placeholder {
+    color: var(--font-color-sub);
+    opacity: 0.8;
+  }
+}
+
+.wrapField label {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--font-color);
 }
 
 .errorText {
-  color: red;
-  text-transform: uppercase;
+  display: block;
+  color: var(--font-color);
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 600;
 }

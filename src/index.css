@@ -1,9 +1,16 @@
+:root {
+  --input-focus: #e74c3c;
+  --font-color: #fff;
+  --font-color-sub: #ccc;
+  --bg-color: #2c3e50;
+  --main-color: #e74c3c;
+}
+
 body {
   font-family: sans-serif;
   line-height: 1.5;
   width: 100%;
-  /* background: #22313f; */
-  background-color: lightblue;
+  background: #22313f;
 }
 
 h1,

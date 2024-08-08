@@ -43,67 +43,65 @@ const RegistrationForm = () => {
   };
 
   return (
-    <div>
-      <div className={style.wrapForm}>
-        <Formik
-          initialValues={{ name: '', email: '', password: '' }}
-          onSubmit={handleSubmit}
-          validationSchema={registrationValidationSchema}
-        >
-          <Form className={style.authForm}>
-            <h2>Register new account</h2>
+    <div className={style.wrapForm}>
+      <Formik
+        initialValues={{ name: '', email: '', password: '' }}
+        onSubmit={handleSubmit}
+        validationSchema={registrationValidationSchema}
+      >
+        <Form className={style.authForm}>
+          <h2>Register new account</h2>
 
-            <div className={style.wrapField}>
-              <Field
-                type='text'
-                name='name'
-                id={nameFieldId}
-                autoComplete='true'
-                placeholder='Your name'
-              />
-              <ErrorMessage
-                name='name'
-                component='span'
-                className={style.errorText}
-              />
-            </div>
+          <div className={style.wrapField}>
+            <Field
+              type='text'
+              name='name'
+              id={nameFieldId}
+              autoComplete='true'
+              placeholder='Your name'
+            />
+            <ErrorMessage
+              name='name'
+              component='span'
+              className={style.errorText}
+            />
+          </div>
 
-            <div className={style.wrapField}>
-              <Field
-                type='email'
-                name='email'
-                id={emailFieldId}
-                autoComplete='true'
-                placeholder='Email'
-              />
-              <ErrorMessage
-                name='email'
-                component='span'
-                className={style.errorText}
-              />
-            </div>
+          <div className={style.wrapField}>
+            <Field
+              type='email'
+              name='email'
+              id={emailFieldId}
+              autoComplete='true'
+              placeholder='Email'
+            />
+            <ErrorMessage
+              name='email'
+              component='span'
+              className={style.errorText}
+            />
+          </div>
 
-            <div className={style.wrapField}>
-              <Field
-                type='password'
-                name='password'
-                id={passwordFieldId}
-                autoComplete='true'
-                placeholder='Password'
-              />
-              <ErrorMessage
-                name='password'
-                component='span'
-                className={style.errorText}
-              />
-            </div>
+          <div className={style.wrapField}>
+            <Field
+              type='password'
+              name='password'
+              id={passwordFieldId}
+              autoComplete='true'
+              placeholder='Password'
+            />
+            <ErrorMessage
+              name='password'
+              component='span'
+              className={style.errorText}
+            />
+          </div>
 
-            <button type='submit' className={style.submitBtn}>
-              Submit
-            </button>
-          </Form>
-        </Formik>
-      </div>
+          <button type='submit' className={style.submitBtn}>
+            Submit
+          </button>
+        </Form>
+      </Formik>
     </div>
   );
 };

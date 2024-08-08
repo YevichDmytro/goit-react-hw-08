@@ -1,4 +1,8 @@
-.header {
+.wrap {
   display: flex;
   justify-content: space-around;
+}
+
+.hr {
+  margin-top: 24px;
 }

@@ -1,8 +1,7 @@
 import { useDispatch } from 'react-redux';
-import { Button } from '@mui/material';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { nanoid } from 'nanoid';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { addContact } from '../../redux/contacts/operations';
 import style from './ContactForm.module.css';
 
@@ -36,51 +35,52 @@ const ContactForm = () => {
   const id = nanoid();
 
   return (
-    <Formik
-      initialValues={{ name: '', number: '' }}
-      onSubmit={handleSubmit}
-      validationSchema={validationSchema}
-    >
-      <Form className={style.form}>
-        <div className={style.wrap}>
-          <label htmlFor={`name-${id}`}>Name</label>
-          <Field
-            type='text'
-            name='name'
-            id={`name-${id}`}
-            className={style.field}
-            autoComplete='on'
-            placeholder='Jack Robinson'
-          />
-          <ErrorMessage
-            name='name'
-            component='span'
-            className={style.errorText}
-          />
-        </div>
-
-        <div className={style.wrap}>
-          <label htmlFor={`number-${id}`}>Number</label>
-          <Field
-            type='text'
-            name='number'
-            id={`number-${id}`}
-            className={style.field}
-            placeholder='000-00-00'
-            autoComplete='on'
-          />
-          <ErrorMessage
-            name='number'
-            component='span'
-            className={style.errorText}
-          />
-        </div>
-
-        <Button variant='contained' color='success' type='submit'>
-          Add contact
-        </Button>
-      </Form>
-    </Formik>
+    <div>
+      <Formik
+        initialValues={{ name: '', number: '' }}
+        onSubmit={handleSubmit}
+        validationSchema={validationSchema}
+      >
+        <Form className={style.form}>
+          <div className={style.wrapField}>
+            <label htmlFor={`name-${id}`}>Name</label>
+            <Field
+              type='text'
+              name='name'
+              id={`name-${id}`}
+              className={style.field}
+              autoComplete='on'
+              placeholder='Jack Robinson'
+            />
+            <ErrorMessage
+              name='name'
+              component='span'
+              className={style.errorText}
+            />
+          </div>
+  
+          <div className={style.wrapField}>
+            <label htmlFor={`number-${id}`}>Number</label>
+            <Field
+              type='text'
+              name='number'
+              id={`number-${id}`}
+              className={style.field}
+              placeholder='000-00-00'
+              autoComplete='on'
+            />
+            <ErrorMessage
+              name='number'
+              component='span'
+              className={style.errorText}
+            />
+          </div>
+          <button type='submit' className={style.submitBtn}>
+            Add contact
+          </button>
+        </Form>
+      </Formik>
+    </div>
   );
 };
 

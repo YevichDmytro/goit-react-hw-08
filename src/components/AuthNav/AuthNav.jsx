@@ -4,8 +4,12 @@ import style from './AuthNav.module.css';
 const AuthNav = () => {
   return (
     <div className={style.navBar}>
-      <NavLink to='/register'>Register</NavLink>
-      <NavLink to='/login'>Log In</NavLink>
+      <NavLink to='/register' className={style.navBtn}>
+        Register
+      </NavLink>
+      <NavLink to='/login' className={style.navBtn}>
+        Log In
+      </NavLink>
     </div>
   );
 };
