@@ -1,0 +1,13 @@
+.wrap {
+  color: #fff;
+}
+
+.text,
+.linkBtn {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.linkBtn {
+  color: var(--main-color);
+}

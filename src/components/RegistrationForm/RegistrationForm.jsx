@@ -1,9 +1,9 @@
 import { useId } from 'react';
-import * as Yup from 'yup';
-import { ErrorMessage, Field, Form, Formik } from 'formik';
-import style from './RegistrationForm.module.css';
 import { useDispatch } from 'react-redux';
+import { ErrorMessage, Field, Form, Formik } from 'formik';
+import * as Yup from 'yup';
 import { register } from '../../redux/auth/operations';
+import style from './RegistrationForm.module.css';
 
 const RegistrationForm = () => {
   const nameFieldId = useId();

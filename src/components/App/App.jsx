@@ -12,7 +12,9 @@ const HomePage = lazy(() => import('../../pages/HomePage/HomePage'));
 const RegistrationPage = lazy(() => import('../../pages/RegistrationPage'));
 const LoginPage = lazy(() => import('../../pages/LoginPage'));
 const ContactsPage = lazy(() => import('../../pages/ContactPage/ContactsPage'));
-const NotFoundPage = lazy(() => import('../../pages/NotFoundPage'));
+const NotFoundPage = lazy(() =>
+  import('../../pages/NotFoundPage/NotFoundPage')
+);
 
 const App = () => {
   const dispatch = useDispatch();

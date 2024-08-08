@@ -1,4 +1,5 @@
 import style from './HomePage.module.css';
+
 const HomePage = () => {
   return (
     <div className={style.welcomeWrap}>
@@ -7,14 +8,14 @@ const HomePage = () => {
       <div className={style.listWrap}>
         <ol className={style.list}>
           <li>
-            Navigate to the Contacts page by clicking the "Contacts" button.
+            Navigate to the Contacts page by clicking the «Contacts» button.
           </li>
           <li>
             Fill in the fields of the form to add a new contact, then click the
-            "Add contact" button.
+            «Add contact» button.
           </li>
           <li>Your contact will appear on the left side of the website.</li>
-          <li>To delete a contact, simply click the "Delete" button.</li>
+          <li>To delete a contact, simply click the «Delete» button.</li>
           <li>
             To search for a contact by name, enter a letter, part of the name,
             or the full name.

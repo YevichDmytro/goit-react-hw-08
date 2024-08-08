@@ -5,7 +5,7 @@ import ContactsList from '../../components/ContactList/ContactList';
 import SearchBox from '../../components/SearchBox/SearchBox';
 import { selectContactsLoading } from '../../redux/contacts/selectors';
 import { fetchContacts } from '../../redux/contacts/operations';
-import style from './ContactPage.module.css';
+import style from './ContactsPage.module.css';
 
 const ContactsPage = () => {
   const dispatch = useDispatch();
